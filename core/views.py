@@ -91,3 +91,7 @@ def get_events(request):
             'url': f'/demanda/{demanda.pk}/',
         })
     return JsonResponse(events, safe=False)
+
+
+def index(request):
+    return render(request, "core/index.html")  # Agora está no caminho correto

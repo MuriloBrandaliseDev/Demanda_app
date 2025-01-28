@@ -83,8 +83,11 @@ ROOT_URLCONF = 'demanda_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            BASE_DIR / "core/templates",  # Diretório de templates do app core
+            BASE_DIR / "accounts/templates"  # Diretório de templates do app accounts
+        ],
+        'APP_DIRS': True,  # Permite que Django encontre templates dentro dos apps automaticamente
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -95,6 +98,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'demanda_app.wsgi.application'
 
