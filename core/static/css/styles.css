@@ -1,0 +1,413 @@
+/* core/static/css/styles.css */
+
+/* Importando a fonte Roboto do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Variáveis de Cor para facilitar a manutenção */
+:root {
+    --background-color: #1e1e1e; /* Cinza muito escuro */
+    --text-color: #e0e0e0; /* Cinza claro */
+    --primary-color: #e9e8e8; /* Roxo médio para elementos principais */
+    --secondary-color: #4b0082; /* Roxo profundo para elementos secundários */
+    --accent-color: #ff69b4; /* Rosa suave para destaques */
+    --hover-color: #836fff; /* Roxo claro para efeitos de hover */
+    --border-color: #333333; /* Bordas suaves */
+    --button-hover-bg: #836fff; /* Fundo do botão no hover */
+    --link-hover-color: #836fff; /* Cor do link no hover */
+}
+
+/* Aplicando a fonte Roboto em todo o body */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    font-family: 'Inter', sans-serif;
+
+}
+
+
+.cabecalho {
+    position: relative;
+    color: white; /* Cor do texto */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+.titulo-cabecalho {
+    font-size: 1.5rem; /* Tamanho expressivo */
+    font-weight: bold;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    font-family: 'Sora', sans-serif;
+}
+
+.titulo-cabecalho i {
+    color: #ff69b4;
+}
+
+
+
+/* Estilizando os botões */
+.btn-pink {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.btn-pink, .btn-secondary {
+    min-width: 150px;
+    text-align: center;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-detail{
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.btn-detail i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
+.btn-pink:hover {
+    background-color: none;
+    text-decoration: none;
+}
+
+.custom-navbar {
+    background-color: #222222; /* Cor de fundo do navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra leve para destaque */
+    padding: 20px 0;
+    border-radius: 50px;
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.custom-navbar a {
+    color: #ffffff; /* Cor inicial dos ícones e texto */
+    text-decoration: none;
+    font-size: 12px; /* Tamanho do texto */
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+.custom-navbar a i {
+    font-size: 24px; /* Tamanho dos ícones */
+    display: block;
+    color: rgb(255, 255, 255);
+    
+}
+
+.custom-navbar a:hover {
+    color: var(--accent-color); /* Cor ao passar o mouse */
+}
+
+.custom-navbar .nav-label {
+    font-size: 12px; /* Tamanho do texto embaixo do ícone */
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* Estilizando botões secundários */
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.text-pink {
+    color: var(--accent-color);
+    font-weight: 900; /* Texto marcante */
+    font-size: 30px; /* Tamanho expressivo */
+    font-family: 'Bebas Neue', sans-serif;
+    background: var(--accent-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Deixa o texto com efeito de gradiente */
+}
+
+
+.list-group-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #2a2a2a;
+}
+
+/* Estilizando links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Estilizando os botões com ícones */
+.btn-icon {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-icon:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon i {
+    font-size: 1.2em;
+}
+
+/* Estilizando formulários */
+form {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+form input, form textarea, form select {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+
+/* Ajustes para o FullCalendar */
+.fc-theme-standard {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.fc-event {
+    background-color: var(--accent-color);
+    border: none;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.fc-event:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+.fc-button {
+    background-color: var(--primary-color);
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.fc-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Centralizando o conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+
+#calendar {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #1e1e1e; /* Fundo do calendário */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+/* Estilizando os cards */
+.card {
+    width: 350px;
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilizando o título da demanda */
+.card-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+
+.texto-data {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Estilizando o botão "Ver Detalhes" */
+.card  {
+    align-self: flex-start;
+}
+
+/* Estilizando a mensagem de alerta */
+.alert-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffa000;
+    border-radius: 5px;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 576px) {
+    .card-text {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    .fc-toolbar-title {
+        font-size: 1.2em;
+    }
+
+    .fc-button-group .fc-button {
+        padding: 5px 8px;
+        font-size: 0.8em;
+    }
+
+    #calendar {
+        padding: 5px;
+    }
+}
+
+
+
+/* core/static/css/styles.css */
+
+/* ... código existente ... */
+
+/* Estilização adicional para o formulário de login */
+#login-form {
+    margin-top: 20px;
+}
+
+#login-form .form-control {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000000;
+
+
+}
+
+#demanda-form .form-control {
+    background-color: #ffffff;
+    border-radius: 2px;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #000000;
+}
+
+#login-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ffffff;
+    outline: none;
+}
+
+
+
+#login-form .form-control:focus {
+    box-shadow: none;
+    border-color: #ffffff;
+    outline: none;
+}
+
+#login-form label {
+    color: #ffffff;
+}
+
+.card-body {
+    
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.btn-success {
+margin-left: 63px;
+margin-top: 20px;
+}
+
+.btn-success-modal {
+    margin-left: 63px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    }

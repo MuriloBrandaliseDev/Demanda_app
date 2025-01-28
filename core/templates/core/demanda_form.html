@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+
+    <div class="card-body">
+        <form method="post" id="demanda-form" style="color: white;">
+            <h2 class="text-pink text-center mb-4">
+                {% if form.instance.pk %}
+                Editar Demanda
+                {% else %}
+                Cadastrar Demanda
+                {% endif %}
+            </h2>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="d-flex justify-content-center mt-3 gap-4">
+                <button type="submit" class="btn btn-pink btn-lg">
+                    <i class="fa-solid fa-save"></i> Salvar
+                </button>
+        
+                <a href="{% url 'home' %}" class="btn btn-pink btn-lg">
+                    <i class="fa-solid fa-arrow-left"></i> Home
+                </a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg  fixed-bottom custom-navbar">
+    <div class="container-fluid d-flex justify-content-around">
+        <a class="nav-item text-center" href="{% url 'home' %}">
+            <span class="nav-label"><i class="fa-solid fa-house-chimney-user"></i></span>
+        </a>
+        <a class="nav-item text-center" href="{% url 'calendar' %}">
+            <span class="nav-label"><i class="fa-regular fa-calendar-days"></i></span>
+        </a>
+        <a class="nav-item text-center" href="{% url 'demanda_create' %}">
+            <span class="nav-label"><i class="fa-solid fa-plus"></i></span>
+        </a>
+    </div>
+</nav>
+{% endblock %}

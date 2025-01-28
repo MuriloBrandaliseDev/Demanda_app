@@ -1,0 +1,100 @@
+<!-- core/templates/core/demanda_detail.html -->
+
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card bg-dark text-white" style="width: 100%; max-width: 700px;">
+        <div class="card-body">
+            <h2 class="card-title mb-3">{{ demanda.titulo }}</h2>
+            <p class="texto-data">{{ demanda.descricao }}</p>
+            <p class="texto-data"><strong>Data:</strong> {{ demanda.data_demanda }}</p>
+            <div class="mt-4 d-flex justify-content-between">
+                <a href="{% url 'demanda_update' demanda.pk %}" class="btn btn-pink">
+                    Editar
+                </a>
+                
+                <a href="{% url 'home' %}" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                </a>
+            </div>
+            <button id="concluir-demanda-btn" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#confirmConcluirModal">
+                <i class="fa-solid fa-check"></i> Concluir Demanda
+            </button>
+        </div>
+        
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg fixed-bottom custom-navbar">
+    <div class="container-fluid d-flex justify-content-around">
+        <a class="nav-item text-center" href="{% url 'home' %}">
+            <span class="nav-label"><i class="fa-solid fa-house-chimney-user"></i></span>
+        </a>
+        <a class="nav-item text-center" href="{% url 'calendar' %}">
+            <span class="nav-label"><i class="fa-regular fa-calendar-days"></i></span>
+        </a>
+        <a class="nav-item text-center" href="{% url 'demanda_create' %}">
+            <span class="nav-label"><i class="fa-solid fa-plus"></i></span>
+        </a>
+    </div>
+</nav>
+
+<!-- Modal de Confirmação para Concluir Demanda -->
+<div class="modal fade" id="confirmConcluirModal" tabindex="-1" aria-labelledby="confirmConcluirModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmConcluirModalLabel">Confirmar Conclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja concluir esta demanda?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" id="confirm-concluir-btn" class="btn btn-success-modal">Concluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Script para Concluir Demanda com Modal do Bootstrap -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btnConcluir = document.getElementById('confirm-concluir-btn');
+        const concluirBtn = document.getElementById('concluir-demanda-btn');
+        const modal = new bootstrap.Modal(document.getElementById('confirmConcluirModal'), {
+            keyboard: false
+        });
+
+        btnConcluir.addEventListener('click', function() {
+            fetch('{% url "concluir_demanda" demanda.pk %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Fechar o modal
+                    modal.hide();
+                    // Mostrar uma mensagem de sucesso (usando um alert do Bootstrap ou redirecionar)
+                    // Aqui, vamos redirecionar para a página inicial
+                    window.location.href = '{% url "home" %}';
+                } else {
+                    // Mostrar uma mensagem de erro (pode ser um alerta dentro do modal)
+                    alert('Ocorreu um erro ao concluir a demanda.');
+                }
+            })
+            .catch(() => {
+                alert('Ocorreu um erro ao concluir a demanda.');
+            });
+        });
+    });
+</script>
+
+{% endblock %}

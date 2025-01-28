@@ -1,0 +1,25 @@
+<!-- accounts/templates/accounts/login.html -->
+
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<div class="container mt-5 d-flex justify-content-center">
+        <div class="card-body">
+            <h2 class="text-pink text-center mb-4" style="margin-top: 20px;">Login</h2>
+            <form method="post" id="login-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-pink btn-lg">
+                        <i class="fa-solid fa-right-to-bracket"></i> Entrar
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
