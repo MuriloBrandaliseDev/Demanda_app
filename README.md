@@ -1,4 +1,4 @@
-# App de Demandas
+# App de Demandas 🚀
 
 Bem-vindo ao **App de Demandas**, um sistema completo e intuitivo para gerenciar suas demandas de forma prática e organizada. 
 
