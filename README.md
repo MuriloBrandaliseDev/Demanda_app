@@ -4,10 +4,10 @@ Bem-vindo ao **App de Demandas**, um sistema completo e intuitivo para gerenciar
 
  Funcionalidades
 
-- Cadastro de Demandas**: Registre novas demandas com facilidade, especificando os detalhes necessários.
-- Edição de Demandas**: Atualize informações ou ajuste detalhes sempre que necessário.
-- Concluir Demandas**: Marque demandas como concluídas para um acompanhamento eficiente.
-- Visualização no Calendário**: Acompanhe suas demandas em um calendário interativo e visualmente agradável.
+- Cadastro de Demandas: Registre novas demandas com facilidade, especificando os detalhes necessários.
+- Edição de Demandas: Atualize informações ou ajuste detalhes sempre que necessário.
+- Concluir Demandas: Marque demandas como concluídas para um acompanhamento eficiente.
+- Visualização no Calendário; Acompanhe suas demandas em um calendário interativo e visualmente agradável.
 - Design Moderno: Interface limpa, moderna e funcional para uma experiência de uso incrível.
 
  Tecnologias Utilizadas
